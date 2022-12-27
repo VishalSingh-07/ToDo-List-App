@@ -1,0 +1,45 @@
+<%- include("header")  -%>
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #E4E9FD;"> -->
+		<a class="navbar-brand" href="" id="todo"> <i class="fas fa-clipboard-list"></i> To Do List </a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedcontent" aria-controls="navbarSupportedcontent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedcontent">
+			<ul class="navbar-nav ms-auto">
+				<li class="navbar-item"> <a class="nav-link" href="/">Home</a> </li>
+				<li class="navbar-item"> <a class="nav-link" href="/work">Work List</a> </li>
+				<li class="navbar-item"> <a class="nav-link" href="/pricing"> Pricing </a> </li>
+				<form class="d-flex searchform" action="/search" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search/Create List" name="listsearch" aria-label="Search">
+                        <button class="btn btn-warning btn-lg searchbutton" type="submit">Search</button>
+                        </form>
+			</ul>
+		</div>
+	</nav>
+	<div class="box date" id="heading">
+		<% if(listTitle === "Saturday" || listTitle === "Sunday") { %>
+			<h1 style="color:orange"><%= listTitle %></h1>
+			<% } else{ %>
+				<h1 style="color:white"><%= listTitle %></h1>
+				<% } %>
+	</div>
+	<div class="box">
+		
+			<%newListItems.forEach(function(items){%>
+				<form action="/delete" method="post" >
+				<div class="item">
+				<input type="checkbox" name="checkbox" value="<%=items._id%>" onchange="this.form.submit()">
+				<p class="listitem">
+					<%= items.name %>
+				</p>
+			      </div>
+				<input type="hidden" name="listName" value="<%=listTitle%>">
+				</form>
+				
+			<%})%>
+				<form class="item" action="/" method="post">
+					<input type="text" name="newItem" id="" placeholder="New Item" autocomplete="off" class="newitemclassinput">
+					<button class="plusbutton"type="submit" name="list" value="<%= listTitle %>">+</button>
+				</form>
+	</div>
+	<%- include("footer.ejs") -%>

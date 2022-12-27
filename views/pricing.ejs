@@ -1,0 +1,80 @@
+<%- include("header") -%>
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #E4E9FD;"> -->
+		<a class="navbar-brand" href="" id="todo"> <i class="fas fa-clipboard-list"></i> To do List </a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedcontent" aria-controls="navbarSupportedcontent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedcontent">
+			<ul class="navbar-nav ms-auto">
+				<li class="navbar-item"><a class="nav-link" href="/">Home</a></li>
+				<li class="navbar-item"> <a class="nav-link" href="/work">Work List</a> </li>
+				<form class="d-flex searchform" action="/search" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search/Create List" name="listsearch" aria-label="Search">
+                        <button class="btn btn-warning btn-lg searchbutton" type="submit">Search</button>
+                        </form>
+			</ul>
+		</div>
+	</nav>
+	<section id="pricing">
+		<!--<h2 class="pricing-header">A Plan for Every Dog's Needs</h2>-->
+		<div class="container-fluid">
+                  <h2  class="price-header">Our plans for your ToDo</h2>
+		      <p class="price-para">Check what plan is best for You, We care about your convenience in using the application, so you can update your plan up or down at any time</p>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12 pricing-column">
+				<div class="card top">
+					<div class="card-header bg-primary">
+						<h3 class="pricing-title">Basic Plan</h3> </div>
+					<div class="card-body">
+						<h2 class="pricing-text">Free</h2>
+						<p class="freepara">All the basics for boost your creativity</p>
+						<p class="freepara">Your dashboard</p>
+						<p class="freepara">Ads</p>
+						<div class="d-grid gap-2 signup1">
+							<a href="https://r-company.up.railway.app/" target="blank">
+								<button type="button" class="btn btn-outline-dark btn-lg pricingbutton"><strong>Sign Up For Free</strong> </button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12 pricing-column">
+				<div class="card middle">
+					<div class="card-header bg-success">
+						<h3 class="pricing-title">Standard Plan</h3> </div>
+					<div class="card-body">
+						<h2 class="pricing-text">$5 / mo</h2>
+						<p class="standardpara">In case if You need a little bit more from our App</p>
+						<p class="standardpara">Unlimited Lists</p>
+						<p class="standardpara">Withouts Ads </p>
+						<div class="d-grid gap-2 signup">
+							<a href="https://r-company.up.railway.app/" target="blank">
+								<button type="button" class="btn btn-dark btn-lg pricingbutton">Get Started</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12 pricing-column">
+				<div class="card bottom">
+					<div class="card-header bg-warning">
+						<h3 class="pricing-title">Custom Plan</h3> </div>
+					<div class="card-body">
+						<h2 class="pricing-text">$10/ mo</h2>
+						<p class="custompara">for the vig community, teams and experienced users</p>
+						<p class="custompara">Unlimited Project</p>
+						<p class="custompara">Your dashboard</p>
+						<p class="custompara">Without ads</p>
+						<div class="d-grid gap-2 signup">
+							<a href="mailto:vishalsinghagr25@gmail.com" target="blank">
+								<button type="button" class="btn btn-dark btn-lg pricingbutton">Contact us</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<%- include("footer.ejs") -%>
